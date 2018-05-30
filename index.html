@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8" />
+	<title>Memory</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+
+		<br><br><br>
+
+		<h1 style='display: inline-block'>Memory</h1>
+
+		<div class="float-sm-right">
+			<form class="form-inline" id="giocaForm">
+				<select class="form-control" id="selectDiff">
+					<option disabled selected>Difficoltà</option>
+			 		<option value="2">Babbo</option>
+			 		<option value="4">Facilissimo</option>
+					<option value="8">Facile</option>
+					<option value="12">Medio</option>
+					<option value="16">Difficile</option>
+				</select>
+				<button class="btn btn-primary ml-2" type="button" id="giocaButton">Gioca</button>
+			</form>
+			<form class="form-inline" id="restartForm" style="display: none">
+				<button class="btn btn-primary ml-2" type="button" id="restartButton" onclick='location.reload()'>Rigioca</button>
+			</form>
+		</div>
+
+		<hr>
+
+		<script>
+			var animationDuration = 200;
+		</script>
+
+		<div class="alert alert-dismissible alert-danger" style="display: none" id="alertDifficolta">
+		  <button type="button" class="close" onclick="$('#alertDifficolta').hide(animationDuration)">&times;</button>
+		  <strong>Oh snap!</strong> Seleziona la difficoltà!
+		</div>
+
+		<div id="giocoDiv" style="display: none">
+			<span id="cards"></span>
+			<hr>
+			<h2>Punti: <span id="score">0</span></h2>
+			<h3>Mosse: <span id="tries">0</span></h3>
+			<br><br>
+		</div>
+
+		<div class="alert alert-success" style="display: none" id="recordBattutoAlert">
+			<strong>Well done!</strong> Hai battuto il tuo record
+		</div>
+		<div class="alert alert-info" style="display: none" id="recordNonBattutoAlert">
+			<strong>Oh snap!</strong> Non hai battuto il tuo record :(
+		</div>
+
+		<h2 id="classificaTitle">Classifica: </h2><br>
+		<span id="classifica"></span>
+
+	</div>
+
+	<!--<script src="memory-obfuscated.js"></script>-->
+	<script src="memory.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
